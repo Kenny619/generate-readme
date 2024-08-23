@@ -1,0 +1,31 @@
+{
+  "name": "generate-readme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "startProject.js",
+  "scripts": {
+    "test": "vitest",
+    "prebuild": "rimraf dist",
+    "build": "tsc --project ./tsconfig.json && tsc-alias -p ./tsconfig.json",
+    "sandbox": "tsx --no-warnings --env-file=.env ./tests/sandbox.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@types/node": "^22.5.0",
+    "rimraf": "^6.0.1",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "type": "module"
+}
