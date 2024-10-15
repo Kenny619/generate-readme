@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
-		"module": "ESNext",
+		"moduleResolution": "NodeNext",
+		"module": "NodeNext",
 		"strict": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
@@ -14,11 +15,11 @@
 		"sourceMap": false,
 		"types": ["vitest/globals"],
 		"paths": {
-			"@/*": ["src/*"],
-			"@/types/*": ["types/*"],
-			"@/utils/*": ["utils/*"]
+			"@/*": ["./src/*"],
+			"@/types/*": ["./types/*"],
+			"@/utils/*": ["./src/utils/*"]
 		}
 	},
-	"include": ["src", "tests"],
+	"include": ["./src/**/*", "tests"],
 	"exclude": ["node_modules", "dist"]
 }
