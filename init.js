@@ -4,23 +4,20 @@ const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
 packageJson.type = "module";
 packageJson.scripts.test = "vitest";
 packageJson.scripts.prebuild = "rimraf dist";
-packageJson.scripts.build =
-	"tsc --project ./tsconfig.json && tsc-alias -p ./tsconfig.json";
-packageJson.scripts.sandbox =
-	"tsx --no-warnings --env-file=.env ./tests/sandbox.ts";
+packageJson.scripts.build = "tsc --project ./tsconfig.json && tsc-alias -p ./tsconfig.json";
+packageJson.scripts.sandbox = "tsx --no-warnings --env-file=.env ./tests/sandbox.ts";
 fs.writeFileSync("package.json", JSON.stringify(packageJson, null, 2));
 
 // Update tsconfig.json
 const tsconfigJson = { compilerOptions: {} };
-tsconfigJson.compilerOptions.module = "ESNext";
+tsconfigJson.compilerOptions.module = "NodeNext";
+tsconfigJson.compilerOptions.moduleResolution = "NodeNext";
 tsconfigJson.compilerOptions.strict = true;
 tsconfigJson.compilerOptions.esModuleInterop = true;
 tsconfigJson.compilerOptions.forceConsistentCasingInFileNames = true;
 tsconfigJson.compilerOptions.skipLibCheck = true;
 tsconfigJson.compilerOptions.target = "ESNext";
-tsconfigJson.compilerOptions.target = "ESNext";
 tsconfigJson.compilerOptions.allowJs = true;
-tsconfigJson.compilerOptions.forceConsistentCasingInFileNames = true;
 tsconfigJson.compilerOptions.baseUrl = ".";
 tsconfigJson.compilerOptions.outDir = "dist";
 tsconfigJson.compilerOptions.noEmitOnError = true;
@@ -33,7 +30,7 @@ tsconfigJson.compilerOptions.paths = {
 	"@/utils/*": ["utils/*"],
 };
 tsconfigJson.include = ["src", "tests"];
-tsconfigJson.exclude;
+tsconfigJson.exclude = ["node_modules", "dist"];
 fs.writeFileSync("tsconfig.json", JSON.stringify(tsconfigJson, null, 2));
 
 //Update biome.json
@@ -82,3 +79,5 @@ export default defineConfig({
 	require: ["ts-node/register"], // Use ts-node to execute TypeScript files directly
 });`;
 fs.writeFileSync("vite.config.ts", viteConfig);
+
+console.log("config files updated.");

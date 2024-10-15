@@ -1,0 +1,20 @@
+I want you to write a readme file for my github repository.
+My project is called "dirl" and it is a javascript library for working with local directories.
+The main idea behind this project is to simplify the process of working with local file systems and save the developers from spending time on writing a boilerplate codes, fs, loops, and many try/catches.
+
+When installing the project, it should be installed via npm.
+dirl class is instantiated when imported.  It's not necessary for the user to instantiate the class.
+The class is instantiated with a path to the current working directory.  Directory paths passed to all of dirl methods can be either absolute or relative paths.  If the path is relative, it is relative to the current working directory.
+dirl has 4 main method groups:
+1. dirl.get - Acquires information about the directory tree such as files, subdirectories, their sizes, and duplicate files.
+2. dirl.move - Moves files and directories from one location to another.
+3. dirl.copy - Copies files and directories from one location to another.
+4. dirl.flatten - Flattens a directory tree into a single directory.
+
+Within each method group, there are several methods that perform different tasks.
+Please provide a detailed description of each method, including its parameters, return values, and any other relevant information.
+
+Below is the code for the dirl class in JSON format:  path property is the file path and code property is the code of the file. 
+Please use the infoermation provided to write the readme file.
+###
+
